@@ -1,0 +1,40 @@
+INSERT INTO creatures (name, species, danger_level, condition, notes, habitat_id, created_at)
+VALUES
+('Nyx', 'Void Fox', 'HIGH', 'QUARANTINED', 'Avoid bright light', 1, NOW()),
+('Astra', 'Star Serpent', 'MEDIUM', 'STABLE', 'Emits low cosmic radiation', 1, NOW()),
+('Bront', 'Thunder Lizard', 'HIGH', 'STABLE', 'Agitated during storms', 1, NOW()),
+('Cinder', 'Ash Hound', 'MEDIUM', 'QUARANTINED', 'Sheds hot embers when stressed', 1, NOW()),
+('Drift', 'Mist Stalker', 'LOW', 'STABLE', 'Difficult to observe visually', 1, NOW()),
+('Echo', 'Cave Mimic', 'LOW', 'QUARANTINED', 'Repeats nearby sounds', 1, NOW()),
+('Ferrox', 'Iron Beetle', 'LOW', 'STABLE', 'Consumes metallic debris', 1, NOW()),
+('Glint', 'Crystal Sprite', 'LOW', 'STABLE', 'Sensitive to vibrations', 1, NOW()),
+('Havoc', 'Rift Panther', 'HIGH', 'CRITICAL', 'Unstable teleportation bursts', 1, NOW()),
+('Iris', 'Prism Moth', 'LOW', 'STABLE', 'Wings refract intense light', 1, NOW()),
+('Jolt', 'Spark Imp', 'MEDIUM', 'QUARANTINED', 'Discharges static electricity', 1, NOW()),
+('Karn', 'Stoneback Golem', 'MEDIUM', 'STABLE', 'Very slow but extremely strong', 1, NOW()),
+('Lumen', 'Glow Stag', 'LOW', 'STABLE', 'Bioluminescent antlers', 1, NOW()),
+('Mire', 'Swamp Leviathan', 'HIGH', 'QUARANTINED', 'Requires high humidity', 1, NOW()),
+('Nimbus', 'Cloud Drifter', 'LOW', 'STABLE', 'Floats unpredictably', 1, NOW()),
+('Onyx', 'Shadow Drake', 'HIGH', 'CRITICAL', 'Avoid direct eye contact', 1, NOW()),
+('Pyra', 'Flame Wisp', 'MEDIUM', 'STABLE', 'Temperature spikes during feeding', 1, NOW()),
+('Quill', 'Spine Crawler', 'LOW', 'STABLE', 'Defensive posture when approached', 1, NOW()),
+('Raze', 'Molten Ram', 'HIGH', 'QUARANTINED', 'Hooves melt flooring materials', 1, NOW()),
+('Sable', 'Night Lynx', 'MEDIUM', 'STABLE', 'Nocturnal and highly alert', 1, NOW()),
+('Tide', 'Aqua Serpent', 'MEDIUM', 'STABLE', 'Requires constant water flow', 1, NOW()),
+('Umber', 'Dust Colossus', 'HIGH', 'CRITICAL', 'Respiratory hazard nearby', 1, NOW()),
+('Vex', 'Mind Leech', 'HIGH', 'QUARANTINED', 'Psychic shielding recommended', 1, NOW()),
+('Wisp', 'Phantom Hare', 'LOW', 'STABLE', 'Phases through solid objects', 1, NOW()),
+('Zephyr', 'Wind Raptor', 'MEDIUM', 'STABLE', 'Creates localized gusts', 1, NOW());
+
+INSERT INTO habitats (biome, location, min_temp_c, max_temp_c, created_at)
+VALUES
+('FOREST', 'Sector A — Moss Caverns', 8, 18, NOW()),
+('DESERT', 'Sector B — Ember Dunes', 30, 48, NOW()),
+('OCEAN', 'Sector C — Abyssal Basin', 2, 10, NOW()),
+('FOREST', 'Sector D — Whispering Grove', 12, 22, NOW()),
+('DESERT', 'Sector E — Glass Flats', 35, 50, NOW()),
+('OCEAN', 'Sector F — Coral Vault', 18, 26, NOW()),
+('FOREST', 'Sector G — Twilight Canopy', 5, 16, NOW()),
+('DESERT', 'Sector H — Obsidian Reach', 28, 45, NOW()),
+('OCEAN', 'Sector I — Tidal Archive', 6, 14, NOW()),
+('FOREST', 'Sector J — Rootbound Hollow', 10, 20, NOW());
