@@ -6,8 +6,10 @@ import jakarta.validation.Valid;
 import org.example.neonarkintaketracker.dto.CreatureRequest;
 import org.example.neonarkintaketracker.dto.CreatureResponse;
 import org.example.neonarkintaketracker.service.CreatureService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.Map;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,27 +43,20 @@ public class CreatureController {
 
     // NEW: GET /api/creatures/{id}
     @GetMapping("/{id}")
-    public ResponseEntity<CreatureResponse> getCreatureById(@PathVariable Long id) {
-
-        Optional<CreatureResponse> maybeCreature = service.getCreatureById(id);
-
-        if (maybeCreature.isEmpty()) {
-            // 404 when id does not exist
-            return ResponseEntity.notFound().build();
+    public ResponseEntity<?> getCreatureById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(service.getCreatureById(id));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(404).body(
+                    Map.of("error", e.getMessage())
+            );
         }
-
-        // 200 OK when found
-        return ResponseEntity.ok(maybeCreature.get());
     }
 
     @PostMapping
     public ResponseEntity<CreatureResponse> create(@Valid @RequestBody CreatureRequest req) {
         CreatureResponse created = service.createCreature(req);
-
-        // Option A: return 201 Created (recommended) with a response body
-        // Option B: return 200 OK with a response body
-
-        return ResponseEntity.status(201).body(created);
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
 }
